@@ -1,0 +1,11 @@
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const manifest = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+const lock = JSON.parse(readFileSync(new URL("../package-lock.json", import.meta.url), "utf8"));
+const packages = Object.keys({ ...manifest.dependencies, ...manifest.devDependencies });
+const missing = packages.filter((name) => !lock.packages[`node_modules/${name}`]);
+if (missing.length) throw new Error(`Missing installed packages: ${missing.join(", ")}`);
+if (lock.packages["node_modules/express"]) throw new Error("Express remains installed.");
+for (const name of ["fastify", "kysely", "bullmq", "nodemailer", "react"]) require.resolve(name);
+console.info(`${packages.length} direct packages verified. Express removed.`);

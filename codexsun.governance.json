@@ -1,0 +1,49 @@
+{
+  "contractVersion": 1,
+  "appId": "qcafe",
+  "kind": "foundation-preview",
+  "guidance": "https://mcp.codexsun.com/mcp",
+  "connection": {
+    "urlEnvironment": "MCP_SERVER_URL",
+    "secretEnvironment": "MCP_SERVER_SECRET",
+    "policy": "required-live-guidance",
+    "offline": "stop-and-report",
+    "defaultUrl": "https://mcp.codexsun.com/mcp"
+  },
+  "audit": {
+    "required": true,
+    "task": "agent/TASK.md",
+    "evidence": "agent/AUDIT.md"
+  },
+  "actionClasses": [
+    "inspect",
+    "edit",
+    "dependencies",
+    "test",
+    "release",
+    "operations"
+  ],
+  "authorization": "user-instructions",
+  "foundation": {
+    "identityOwner": "platform-core",
+    "status": "pending-shared-platform",
+    "portals": [
+      {
+        "identity": "user",
+        "login": "/login",
+        "desk": "/desk"
+      },
+      {
+        "identity": "admin",
+        "login": "/admin/login",
+        "desk": "/admin/desk"
+      },
+      {
+        "identity": "super-admin",
+        "login": "/sa/login",
+        "desk": "/sa/desk"
+      }
+    ],
+    "businessFeatures": false
+  }
+}

@@ -1,0 +1,131 @@
+@import "@devxcrew/react-ui/styles";
+@import "@fontsource-variable/geist";
+@source "../../node_modules/@devxcrew/react-ui/src";
+@source "./";
+
+:root {
+  font-family: "Geist Variable", system-ui, sans-serif;
+}
+body {
+  margin: 0;
+}
+.public-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+}
+.public-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px clamp(24px, 7vw, 100px);
+  border-bottom: 1px solid var(--border);
+}
+.public-brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 650;
+  text-decoration: none;
+}
+.public-login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+.public-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  padding: 80px clamp(24px, 7vw, 100px);
+}
+.public-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--muted-foreground);
+}
+.public-content h1 {
+  font-size: clamp(38px, 5.5vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  font-weight: 550;
+}
+.public-content > p {
+  font-size: 19px;
+  line-height: 1.6;
+  max-width: 480px;
+  color: var(--muted-foreground);
+}
+.public-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+.public-note span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+}
+.public-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px clamp(24px, 7vw, 100px);
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+.public-back {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  left: 24px;
+  font-size: 14px;
+}
+.desk-content {
+  padding: clamp(24px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.desk-content h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 550;
+  letter-spacing: -1px;
+}
+.desk-content > p {
+  max-width: 650px;
+  color: var(--muted-foreground);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.desk-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.desk-section h2 {
+  font-size: 19px;
+  font-weight: 550;
+}
+.desk-section p {
+  padding-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
+.desk-content .desk-preview {
+  font-size: 13px;
+}
