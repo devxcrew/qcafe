@@ -1,6 +1,6 @@
 # Plan
 
-1. Verify the isolated foundation and live MCP connection.
-2. Keep package versions and release records aligned.
-3. Connect real identity through Platform Core when available.
+1. Completed: npm-only runtime and maintenance, isolated verification, and documented setup.
+2. Run the revised GitHub workflow after the next authorized commit and push.
+3. Connect real identity, RBAC, and tenancy through Platform Core when available.
 4. Add module-owned business capabilities only when requested.

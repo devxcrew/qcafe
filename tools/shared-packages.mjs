@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdirSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = process.cwd();
@@ -20,11 +20,18 @@ function npm(args, cwd = root, capture = false) {
 }
 
 if (mode === "local") {
+  const sharedRoot = resolve(process.env.CODEXSUN_SHARED_ROOT ?? resolve(root, "../../shared"));
+  for (const owner of ["framework", "ui"]) {
+    if (!existsSync(resolve(sharedRoot, owner, "package.json")))
+      throw new Error(
+        `Missing optional ${owner} source at ${sharedRoot}. Set CODEXSUN_SHARED_ROOT to your shared source directory, or use packages:npm.`,
+      );
+  }
   const destination = resolve(root, ".cache/shared-packages");
   mkdirSync(destination, { recursive: true });
   const tarballs = [];
   for (const owner of ["framework", "ui"]) {
-    const directory = resolve(root, "../../shared", owner);
+    const directory = resolve(sharedRoot, owner);
     if (owner === "framework") npm(["run", "build"], directory);
     const packed = JSON.parse(
       npm(
