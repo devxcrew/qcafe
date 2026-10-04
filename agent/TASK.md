@@ -1,5 +1,19 @@
 # Current task
 
+## Completion wave - 2026-10-04
+
+Source 0.1.2 was committed and pushed. Release verification and GitHub CI passed. Preview sessions are not authentication. Platform migration depends on the accepted coordinated release. Business features require owner requirements.
+
+- [x] Reconcile current status with the GitHub source release and latest owner audit.
+- [x] Retrieve fresh authenticated cloud governance before this wave.
+- [x] Record current source and foundation dependencies.
+- [ ] Migrate this app to the accepted Cxsun foundation after its registry and interaction gates close.
+
+Use projects/cxsun/agent/REMAINING-WORK.md for ordered cross-owner dependencies.
+Production deployment and real SMTP acceptance remain deferred. No pending external gate is marked complete.
+
+## Prior records
+
 Complete standalone development for qcafe.
 
 ## Completed
