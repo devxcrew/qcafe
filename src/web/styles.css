@@ -1,6 +1,6 @@
-@import "@devxcrew/react-ui/styles";
+@import "@devxcrew/ui/styles";
 @import "@fontsource-variable/geist";
-@source "../../node_modules/@devxcrew/react-ui/src";
+@source "../../node_modules/@devxcrew/ui/src";
 @source "./";
 
 :root {

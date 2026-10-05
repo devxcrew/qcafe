@@ -49,7 +49,7 @@ if (mode === "local") {
     "Installed local package snapshots. Re-run after shared source changes. Release manifests and lockfiles are unchanged.",
   );
 } else if (mode === "npm") {
-  const packages = ["@devxcrew/core-framework", "@devxcrew/react-ui"].map(
+  const packages = ["@devxcrew/framework", "@devxcrew/ui"].map(
     (name) => `${name}@${manifest.dependencies[name]}`,
   );
   npm(["install", "--no-save", "--package-lock=false", ...packages]);

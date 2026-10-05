@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { createApplicationServer, readApplicationConfig } from "@devxcrew/core-framework";
+import { createApplicationServer, readApplicationConfig } from "@devxcrew/framework";
 const config = readApplicationConfig({
   APP_NAME: "QCafe",
   APP_PORT: "5176",

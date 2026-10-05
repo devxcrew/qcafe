@@ -1,5 +1,13 @@
 # Verification evidence
 
+## Package migration - 2026-10-05
+
+- [x] Retrieve authenticated cloud governance before this migration.
+- [x] Update active package imports, helpers and manifests to the shorter public names.
+- [x] Install and verify the published registry packages.
+- [x] Commit and push the reviewed migration.
+
+
 ## Passed — 2026-10-03
 
 - Live authenticated MCP instructions and deployed repository metadata for qcafe.

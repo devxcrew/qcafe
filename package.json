@@ -1,6 +1,6 @@
 {
   "name": "@codexsun/qcafe",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
   "engines": {
@@ -43,8 +43,8 @@
     "setup": "npm run tools:env && npm run mcp:verify"
   },
   "dependencies": {
-    "@devxcrew/core-framework": "^0.1.7",
-    "@devxcrew/react-ui": "^0.1.7",
+    "@devxcrew/framework": "0.1.8",
+    "@devxcrew/ui": "0.2.0",
     "@fastify/cookie": "^11.1.2",
     "@fastify/cors": "^11.3.0",
     "@fastify/static": "latest",

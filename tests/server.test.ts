@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { readApplicationConfig } from "@devxcrew/core-framework";
+import { readApplicationConfig } from "@devxcrew/framework";
 const env = {
   APP_NAME: "QCafe",
   APP_PORT: "5176",

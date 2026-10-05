@@ -1,5 +1,13 @@
 # Current task
 
+## Package migration - 2026-10-05
+
+- [x] Retrieve authenticated cloud governance before this migration.
+- [x] Update active package imports, helpers and manifests to the shorter public names.
+- [x] Install and verify the published registry packages.
+- [x] Commit and push the reviewed migration.
+
+
 ## Completion wave - 2026-10-04
 
 Source 0.1.2 was committed and pushed. Release verification and GitHub CI passed. Preview sessions are not authentication. Platform migration depends on the accepted coordinated release. Business features require owner requirements.

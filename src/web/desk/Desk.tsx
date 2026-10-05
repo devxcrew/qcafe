@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Home, PanelsTopLeft, LogOut } from "lucide-react";
-import { MainWorkspace } from "@devxcrew/react-ui/layouts/main-workspace";
-import { Button } from "@devxcrew/react-ui/components/button";
+import { MainWorkspace } from "@devxcrew/ui/layouts/main-workspace";
+import { Button } from "@devxcrew/ui/components/button";
 import { application } from "../config";
 import { hasPreviewDesk, leavePreviewDesk } from "../auth/preview-session";
 

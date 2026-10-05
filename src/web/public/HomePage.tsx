@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, PanelsTopLeft } from "lucide-react";
-import { Button } from "@devxcrew/react-ui/components/button";
+import { Button } from "@devxcrew/ui/components/button";
 import { application } from "../config";
 
 export function HomePage() {

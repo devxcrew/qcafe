@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { LoginPage } from "@devxcrew/react-ui/blocks/auth";
+import { LoginPage } from "@devxcrew/ui/blocks/auth";
 import { application } from "../config";
 import { enterPreviewDesk } from "./preview-session";
 

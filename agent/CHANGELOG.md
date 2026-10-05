@@ -2,11 +2,23 @@
 
 ## Version State
 
-Current version: 0.1.2
+Current version: 0.1.3
 
-Release tag: v-0.1.2
+Release tag: v-0.1.3
 
-Changelog label: v 0.1.2
+Changelog label: v 0.1.3
+
+## v-0.1.3
+
+### [v 0.1.3] 2026-10-05 7:58 am - Adopt Framework and UI package names
+
+#### Database Changes
+
+- Database update: No (manual).
+
+#### App Codebase Changes
+
+- Use the public @devxcrew/framework and @devxcrew/ui packages. Preserve module ownership and existing behavior.
 
 ## v-0.1.2
 
@@ -72,3 +84,11 @@ Changelog label: v 0.1.2
 - Passed full workspace and isolated verification, browser preview flows, port handling, and restart checks.
 - Document one clean install of the identical shared dependency graph, then sequential per-app ownership.
 - Preserve this app's release version. No commit or push was performed.
+
+### Package migration verification - 2026-10-05
+
+- Passed 3 tests, owner verification and applicable package checks.
+- All six application lockfiles use exact Framework 0.1.8 and UI 0.2.0 registry artifacts.
+- Two fresh registry apps passed 44 tests each, live SQLite and cross-app session denial.
+- The gallery passed source and isolated registry verification with bundle budgets.
+- Browser, real SMTP and production deployment acceptance remain separate.

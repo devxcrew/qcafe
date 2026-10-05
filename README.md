@@ -43,7 +43,7 @@ Desktop and Docker commands are deferred until their scaffolds are implemented.
 
 ## Shared package development
 
-Normal installs use public @devxcrew/core-framework and @devxcrew/react-ui npm packages.
+Normal installs use public @devxcrew/framework and @devxcrew/ui npm packages.
 
 - `npm run packages:local`: install optional sibling source snapshots without changing release manifests.
 - `npm run packages:npm`: restore registry package ranges.
