@@ -1,6 +1,6 @@
 # qcafe agent notes
 
-Compose the base application, frontend routing, preview login, desk, and server startup.
+Compose the base application, frontend routing, database-backed identity portals, desks, and server startup.
 
 ## Module architecture
 
@@ -84,3 +84,24 @@ authorization.
 
 Keep `MCP_SERVER_SECRET` in ignored `.env` files and outside frontend code. The app ID and app user
 describe developer context only.
+
+
+## Aligned foundation
+
+Use public npm Platform identity with this app’s own SQLite database.
+Keep all ten canonical frontend files in each module. Backend business modules require all ten canonical files and controllers before services.
+The API database and identity folders are infrastructure and package adapters; business identity implementations belong to Platform.
+Keep separate user, admin and super-admin portals. Do not restore preview sessions.
+
+
+## Canonical foundation files
+
+Each frontend identity module owns index.ts and identity.provider.ts,
+identity.routes.tsx, identity.workspace.tsx, identity.list.tsx, identity.form.tsx,
+identity.services.ts, identity.hooks.ts, identity.schema.ts and identity.types.ts.
+
+The backend identity adapter owns all ten canonical backend files. Its routes
+call its controller and service before the public Platform provider. Platform owns
+identity request validation, business rules, migrations, persistence and seeds.
+The adapter's non-applicable files state that ownership explicitly.
+Database and application composition folders are business-neutral infrastructure.

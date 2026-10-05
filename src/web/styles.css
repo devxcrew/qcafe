@@ -1,6 +1,6 @@
 @import "@devxcrew/ui/styles";
 @import "@fontsource-variable/geist";
-@source "../../node_modules/@devxcrew/ui/src";
+@source "../../node_modules/@devxcrew/ui";
 @source "./";
 
 :root {
@@ -125,7 +125,4 @@ body {
   padding-top: 8px;
   color: var(--muted-foreground);
   font-size: 14px;
-}
-.desk-content .desk-preview {
-  font-size: 13px;
 }

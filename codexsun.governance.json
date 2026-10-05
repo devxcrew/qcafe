@@ -1,7 +1,7 @@
 {
   "contractVersion": 1,
   "appId": "qcafe",
-  "kind": "foundation-preview",
+  "kind": "foundation-authenticated",
   "guidance": "https://mcp.codexsun.com/mcp",
   "connection": {
     "urlEnvironment": "MCP_SERVER_URL",
@@ -26,7 +26,7 @@
   "authorization": "user-instructions",
   "foundation": {
     "identityOwner": "platform-core",
-    "status": "pending-shared-platform",
+    "status": "implemented-npm-platform",
     "portals": [
       {
         "identity": "user",
@@ -44,6 +44,8 @@
         "desk": "/sa/desk"
       }
     ],
-    "businessFeatures": false
+    "businessFeatures": false,
+    "identityPackage": "@devxcrew/platform",
+    "database": "sqlite-kysely"
   }
 }

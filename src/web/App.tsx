@@ -1,28 +1,22 @@
-import {
-  createRootRoute,
-  createRoute,
-  createRouter,
-  lazyRouteComponent,
-  Outlet,
-} from "@tanstack/react-router";
-import { HomePage } from "./public/HomePage";
+import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
+
+import { frontend } from "./composition/application.providers";
+import { publicProvider } from "./public/public.provider";
 
 const root = createRootRoute({ component: Outlet });
-const home = createRoute({ getParentRoute: () => root, path: "/", component: HomePage });
-const login = createRoute({
-  getParentRoute: () => root,
-  path: "/login",
-  component: lazyRouteComponent(() => import("./auth/Login"), "Login"),
-});
-const desk = createRoute({
-  getParentRoute: () => root,
-  path: "/desk",
-  component: lazyRouteComponent(() => import("./desk/Desk"), "Desk"),
-});
+
+const contributedRoutes = frontend.routes.map((route) =>
+  createRoute({
+    getParentRoute: () => root,
+    path: route.path,
+    component: route.component,
+  }),
+);
 export const router = createRouter({
-  routeTree: root.addChildren([home, login, desk]),
-  defaultNotFoundComponent: () => <HomePage />,
+  routeTree: root.addChildren(contributedRoutes),
+  defaultNotFoundComponent: publicProvider.routes[0].component,
 });
+
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;

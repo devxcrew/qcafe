@@ -7,12 +7,19 @@
     "envFile": ".env"
   },
   "boundaries": {
-    "sources": ["src"],
-    "frontendSources": ["src/web"],
+    "sources": [
+      "src"
+    ],
+    "frontendSources": [
+      "src/web"
+    ],
     "compilerPackage": "typescript-eslint-compiler",
-    "developmentPackages": ["vite"]
+    "developmentPackages": [
+      "vite"
+    ]
   },
   "maintenance": {
     "changelogPath": "agent/CHANGELOG.md"
-  }
+  },
+  "allowLocalPackages": false
 }

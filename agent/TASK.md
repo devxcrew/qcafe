@@ -1,6 +1,16 @@
 # Current task
 
+## Q Cafe MVP table scope - 2026-10-05
+
+- [x] Re-review the prior 114-table proposal against the first cafe release.
+- [x] Reorganize into a 30-table MVP for setup, menu, counter/takeaway, KOT, basic booking, payment/refund, print, sync, and operational close.
+- [x] Move inventory, advanced restaurant, customer engagement, provider payout, and accounting integrations into explicitly deferred scope.
+- [x] Record client/offline boundaries and pre-schema decisions in `agent/qcafe-table.md`.
+- [ ] Confirm tax, identity, payment, desktop, reservation, close, and printer contracts before schema implementation.
+
 ## Q Cafe data-scope refinement - 2026-10-05
+
+This earlier 114-table inventory is retained as history; the active first-release target is the 30-table MVP above.
 
 - [x] Review POS, takeaway, KOT, booking, client, offline-sync, and settlement coverage.
 - [x] Refine the table inventory and add operation deduplication, payment allocation, payout matching, and receipt tender links.
@@ -22,7 +32,7 @@ Source 0.1.2 was committed and pushed. Release verification and GitHub CI passed
 - [x] Reconcile current status with the GitHub source release and latest owner audit.
 - [x] Retrieve fresh authenticated cloud governance before this wave.
 - [x] Record current source and foundation dependencies.
-- [ ] Migrate this app to the accepted Cxsun foundation after its registry and interaction gates close.
+- [x] Migrate to the verified local Cxsun foundation; see FOUNDATION-PARITY.md in Cxsun. Browser and production acceptance remain open.
 
 Use projects/cxsun/agent/REMAINING-WORK.md for ordered cross-owner dependencies.
 Production deployment and real SMTP acceptance remain deferred. No pending external gate is marked complete.
@@ -61,3 +71,19 @@ Preserve existing task history and incomplete acceptance gates.
 
 Source version: 0.1.4. Published package archives retain their existing versions.
 The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.
+
+
+## Shared alignment audit - 2026-10-05
+
+Full verification and package boundaries passed with Framework 0.1.11. Preview sessions remain; identity migration is separate work.
+
+Authenticated live MCP verification passed. See the [alignment audit](D:/codexsun/projects/cxsun/agent/SHARED-ALIGNMENT.md). Version numbers remain unchanged. No release delivery was performed by this audit.
+
+## Cxsun foundation parity - 2026-10-05
+
+Current source and exact dependencies match Cxsun after app-name and port substitutions.
+This app keeps its own ID, release version, database, Git repository and history.
+Verification passed: 46 tests, lint, types, build, compiled identity, package boundaries and authenticated live MCP.
+SQLite migration, configured seed and connection checks passed. Preview source was removed. Blank bootstrap fields create no accounts.
+
+See [foundation parity](D:/codexsun/projects/cxsun/agent/FOUNDATION-PARITY.md) for evidence and remaining acceptance work. Live inventory needs refresh after this change. No commit, push, publication or deployment was performed.

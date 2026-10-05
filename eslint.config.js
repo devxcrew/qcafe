@@ -7,8 +7,10 @@ registerHooks({
     return nextResolve(specifier, context);
   },
 });
-const { default: parser } = await import("@typescript-eslint/parser");
-const { default: plugin } = await import("@typescript-eslint/eslint-plugin");
+const [{ default: parser }, { default: plugin }] = await Promise.all([
+  import("@typescript-eslint/parser"),
+  import("@typescript-eslint/eslint-plugin"),
+]);
 export default [
   { ignores: ["dist/**", "node_modules/**", "src-tauri/target/**"] },
   {

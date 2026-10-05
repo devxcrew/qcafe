@@ -10,6 +10,16 @@ Changelog label: v 0.1.4
 
 ## v-0.1.4
 
+### [v 0.1.4] 2026-10-05 12:46 pm - Adopt database-backed Cxsun foundation
+
+#### Database Changes
+
+- Database update: Yes (manual).
+
+#### App Codebase Changes
+
+- Replace preview sessions with isolated SQLite Platform identity; preserve cafe planning and verify 46 tests and database setup.
+
 ### [v 0.1.4] 2026-10-05 8:37 am - Align workspace packages
 
 #### Database Changes
@@ -114,3 +124,19 @@ Changelog label: v 0.1.4
 
 Source version: 0.1.4. Published package archives retain their existing versions.
 The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.
+
+
+## Unreleased alignment - 2026-10-05
+
+Full verification and package boundaries passed with Framework 0.1.11. Preview sessions remain; identity migration is separate work.
+
+Authenticated live MCP verification passed. See the [alignment audit](D:/codexsun/projects/cxsun/agent/SHARED-ALIGNMENT.md). Version numbers remain unchanged. No release delivery was performed by this audit.
+
+## Cxsun foundation parity - 2026-10-05
+
+Current source and exact dependencies match Cxsun after app-name and port substitutions.
+This app keeps its own ID, release version, database, Git repository and history.
+Verification passed: 46 tests, lint, types, build, compiled identity, package boundaries and authenticated live MCP.
+SQLite migration, configured seed and connection checks passed. Preview source was removed. Blank bootstrap fields create no accounts.
+
+See [foundation parity](D:/codexsun/projects/cxsun/agent/FOUNDATION-PARITY.md) for evidence and remaining acceptance work. Live inventory needs refresh after this change. No commit, push, publication or deployment was performed.

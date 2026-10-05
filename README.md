@@ -4,8 +4,10 @@ An isolated application foundation with npm Framework and UI packages.
 
 ## Current flow
 
-Home (`/`) → preview login (`/login`) → desk (`/desk`).
-Preview sessions are frontend-only. Real authentication, RBAC, tenancy, and business APIs are pending.
+Home (`/`) → database-backed login → role-specific desk.
+User: `/login` → `/desk`. Admin: `/admin/login` → `/admin/desk`. Super-admin: `/sa/login` → `/sa/desk`.
+Platform owns identity, durable sessions, RBAC and tenancy. This app owns an isolated SQLite database through Kysely.
+Business features are not implemented.
 
 ## Development setup
 
@@ -36,7 +38,7 @@ Set APP_MODE=production in the server environment before production startup.
 ## Standalone commands
 
 Runtime and maintenance use installed npm packages. No sibling checkout is required.
-Run `npm run setup` after setting the cloud secret to initialize configuration and verify MCP.
+Run `npm run setup` after setting the cloud secret to verify MCP, migrate SQLite and seed configured accounts.
 Run `npm run verify` for maintenance, lint, types, tests, build, and production smoke checks.
 CI checks out only this app.
 Desktop and Docker commands are deferred until their scaffolds are implemented.
@@ -62,3 +64,14 @@ Maintain agent/CHANGELOG.md and use commit subjects `#<patch> - <release title>`
 Use github:now only for an authorized commit and push.
 
 GitHub: https://github.com/devxcrew/qcafe.
+
+
+## Cxsun foundation alignment
+
+This app uses the same foundation code and exact npm package set as Cxsun.
+Its app ID, port, database, repository version and history remain independent.
+Configure optional bootstrap account emails and strong passwords in ignored `.env`.
+Blank bootstrap values create no accounts. Do not use preview credentials.
+Run `npm run db:setup`, `npm run db:check`, then `npm run verify`.
+Use `IDENTITY_MODE=single-client` or `multi-tenant` with explicit tenant configuration.
+Email delivery and production acceptance remain separate work.

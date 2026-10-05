@@ -20,7 +20,12 @@ export default defineConfig(({ mode }) => {
       alias: { "@": fileURLToPath(new URL("./src/web", import.meta.url)) },
       dedupe: ["react", "react-dom"],
     },
-    server: { host: config.host, port: config.port, strictPort: true },
+    server: {
+      host: config.host,
+      port: config.port,
+      strictPort: true,
+      watch: { ignored: ["**/.cache/**"] },
+    },
     build: { outDir: "dist/frontend" },
   };
 });

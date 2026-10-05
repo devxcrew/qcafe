@@ -145,3 +145,26 @@ Version 0.1.2: npm run verify passed. 3 tests, lint, types, build and production
 
 Source version: 0.1.4. Published package archives retain their existing versions.
 The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.
+## Q Cafe MVP table scope review — 2026-10-05
+
+- Passed: Re-reviewed the 114-table proposal and replaced it with a 30-table first-release inventory in `agent/qcafe-table.md`.
+- Passed: Kept the requested core workflows: setup, counter and takeaway POS, KOT, basic booking, web/desktop, constrained offline sync, payment/refund, printing, shift close, and business-day close.
+- Passed: Grouped inventory, advanced restaurant functions, customer engagement, external channels, provider payout matching, and accounting exports as deferred scope with activation reasons.
+- Passed: Defined operational settlement boundary and recorded seven contract decisions that must close before schema work.
+- Untested: Documentation only. No schema, migrations, APIs, or UI changed. No tests or builds ran.
+
+
+## Shared alignment audit - 2026-10-05
+
+Full verification and package boundaries passed with Framework 0.1.11. Preview sessions remain; identity migration is separate work.
+
+Authenticated live MCP verification passed. See the [alignment audit](D:/codexsun/projects/cxsun/agent/SHARED-ALIGNMENT.md). Version numbers remain unchanged. No release delivery was performed by this audit.
+
+## Cxsun foundation parity - 2026-10-05
+
+Current source and exact dependencies match Cxsun after app-name and port substitutions.
+This app keeps its own ID, release version, database, Git repository and history.
+Verification passed: 46 tests, lint, types, build, compiled identity, package boundaries and authenticated live MCP.
+SQLite migration, configured seed and connection checks passed. Preview source was removed. Blank bootstrap fields create no accounts.
+
+See [foundation parity](D:/codexsun/projects/cxsun/agent/FOUNDATION-PARITY.md) for evidence and remaining acceptance work. Live inventory needs refresh after this change. No commit, push, publication or deployment was performed.
