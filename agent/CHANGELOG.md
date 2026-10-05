@@ -2,11 +2,23 @@
 
 ## Version State
 
-Current version: 0.1.3
+Current version: 0.1.4
 
-Release tag: v-0.1.3
+Release tag: v-0.1.4
 
-Changelog label: v 0.1.3
+Changelog label: v 0.1.4
+
+## v-0.1.4
+
+### [v 0.1.4] 2026-10-05 8:37 am - Align workspace packages
+
+#### Database Changes
+
+- Database update: No (manual).
+
+#### App Codebase Changes
+
+- Align maintenance tooling with @devxcrew/tools@0.1.8 and record the verified workspace package set.
 
 ## v-0.1.3
 
@@ -92,3 +104,13 @@ Changelog label: v 0.1.3
 - Two fresh registry apps passed 44 tests each, live SQLite and cross-app session denial.
 - The gallery passed source and isolated registry verification with bundle budgets.
 - Browser, real SMTP and production deployment acceptance remain separate.
+
+## Dependency alignment - 2026-10-05
+
+- [x] Align consumed shared packages and common direct dependency versions.
+- [x] Install dependencies with lifecycle scripts disabled.
+- [x] Keep app dependency ownership and public peer ranges.
+- [x] Exclude Veyrezio from this change.
+
+Source version: 0.1.4. Published package archives retain their existing versions.
+The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.

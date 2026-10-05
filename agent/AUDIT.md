@@ -122,3 +122,26 @@ This delivery covers GitHub source. Npm publication, production deployment and r
 ## GitHub release verification - 2026-10-04
 
 Version 0.1.2: npm run verify passed. 3 tests, lint, types, build and production smoke. Authenticated cloud governance connection and configured-secret scan passed. GitHub source delivery is authorized; npm publication and deployment are outside this release.
+
+## Table plan review - 2026-10-05
+
+- Passed: Read the proposed Q Cafe table plan and listed 109 table definitions with Table, Fields, and Why it is needed columns.
+- Partial: Recorded four state, payment, inventory, and scope questions for review before implementation.
+- Untested: No schema, migrations, APIs, or UI changed. No tests or builds ran.
+
+## Q Cafe scope refinement - 2026-10-05
+
+- Passed: Mapped setup, POS, takeaway, KOT, booking, web, desktop, later mobile, offline sync, shift close, day close, payout reconciliation, and accounting export.
+- Passed: Expanded the plan to 114 tables and verified table IDs against the reviewed 109-table source plus five proposed additions.
+- Partial: Operational settlement and accounting export are in scope. General ledger, bank reconciliation, supplier payables, and statutory filings need separate approval.
+- Untested: No database, API, or client implementation changed. No tests or builds ran.
+
+## Dependency alignment - 2026-10-05
+
+- [x] Align consumed shared packages and common direct dependency versions.
+- [x] Install dependencies with lifecycle scripts disabled.
+- [x] Keep app dependency ownership and public peer ranges.
+- [x] Exclude Veyrezio from this change.
+
+Source version: 0.1.4. Published package archives retain their existing versions.
+The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.

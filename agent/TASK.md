@@ -1,5 +1,12 @@
 # Current task
 
+## Q Cafe data-scope refinement - 2026-10-05
+
+- [x] Review POS, takeaway, KOT, booking, client, offline-sync, and settlement coverage.
+- [x] Refine the table inventory and add operation deduplication, payment allocation, payout matching, and receipt tender links.
+- [x] Separate operational day close from external accounting and general-ledger scope.
+- [ ] Confirm legal, tax, payment, identity, desktop runtime, and accounting contracts before schema implementation.
+
 ## Package migration - 2026-10-05
 
 - [x] Retrieve authenticated cloud governance before this migration.
@@ -44,3 +51,13 @@ Release title: Align Qcafe foundation delivery.
 Align standalone maintenance, CI and public shared package boundaries. Preview sessions remain unauthenticated.
 Update version records, review release checks, then commit and push the current owner branch.
 Preserve existing task history and incomplete acceptance gates.
+
+## Dependency alignment - 2026-10-05
+
+- [x] Align consumed shared packages and common direct dependency versions.
+- [x] Install dependencies with lifecycle scripts disabled.
+- [x] Keep app dependency ownership and public peer ranges.
+- [x] Exclude Veyrezio from this change.
+
+Source version: 0.1.4. Published package archives retain their existing versions.
+The baseline is recorded in projects/cxsun/agent/DEPENDENCY-BASELINE.json.
