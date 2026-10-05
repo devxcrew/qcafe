@@ -9,18 +9,29 @@ import { refreshGovernance } from "./governance.mjs";
 export async function startDevelopment({
   root = process.cwd(),
   env = process.env,
+  target = "all",
   command,
   args,
   stdio = "inherit",
 } = {}) {
+  if (!["all", "api", "web"].includes(target)) throw new Error("Invalid development target.");
   if (!command) {
     const require = createRequire(resolve(root, "package.json"));
-    const version = pathToFileURL(require.resolve("@devxcrew/tools/version"));
     command = process.execPath;
-    args = [fileURLToPath(new URL("../bin/tools.mjs", version)), "app:dev"];
+    if (target === "web") {
+      args = [resolve(require.resolve("vite/package.json"), "../bin/vite.js"), "--strictPort"];
+    } else {
+      const version = pathToFileURL(require.resolve("@devxcrew/tools/version"));
+      args = [fileURLToPath(new URL("../bin/tools.mjs", version)), "app:dev"];
+    }
   }
   const governance = await refreshGovernance(env, root);
-  const child = spawn(command, args, { cwd: root, env, stdio, windowsHide: true });
+  const child = spawn(command, args, {
+    cwd: root,
+    env: { ...env, CODEXSUN_DEV_TARGET: target },
+    stdio,
+    windowsHide: true,
+  });
   return { child, governance };
 }
 
@@ -31,7 +42,10 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   } catch {
     /* The app owns required environment validation. */
   }
-  const { child } = await startDevelopment({ env: { ...local, ...process.env } });
+  const { child } = await startDevelopment({
+    env: { ...local, ...process.env },
+    target: process.argv[2] ?? "all",
+  });
   child.once("error", (error) => {
     console.error(error.message);
     process.exitCode = 1;

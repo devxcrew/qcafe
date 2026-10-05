@@ -76,12 +76,18 @@ const server = await (async () => {
 })();
 let closeFrontend: (() => Promise<void>) | undefined;
 const staticHandlers = server.listeners("request");
+const apiOnly = config.mode === "development" && process.env.CODEXSUN_DEV_TARGET === "api";
 let serveFrontend = (request: IncomingMessage, response: ServerResponse) => {
+  if (apiOnly) {
+    response.writeHead(404);
+    response.end("Not found");
+    return;
+  }
   for (const handler of staticHandlers) handler.call(server, request, response);
 };
 
 try {
-  if (config.mode === "development") {
+  if (config.mode === "development" && !apiOnly) {
     const { createServer } = await import("vite");
     const vite = await createServer({
       server: { middlewareMode: true, ws: { server } },

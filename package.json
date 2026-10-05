@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "node tools/dev.mjs",
-    "dev:server": "npm run dev",
-    "dev:web": "npm run dev",
+    "dev:api": "node tools/dev.mjs api",
+    "dev:web": "node tools/dev.mjs web",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit && node node_modules/typescript/bin/tsc -p tsconfig.server.json --noEmit",
     "build": "devxcrew-tools app:build",
     "start": "node --env-file=.env dist/api/index.js",
