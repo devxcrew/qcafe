@@ -14,7 +14,7 @@ infrastructure business-neutral.
 
 Use events and queues only for real asynchronous needs. Keep contracts and handlers module-owned.
 Keep files below 700 lines when practical. Review files at 700–900 lines and split above 900 within
-the owner. Do not create empty roles, unnecessary layers, or speculative abstractions.
+the owner. Keep required non-applicable files minimal and explicit. Do not add fake behavior, unnecessary layers, or speculative abstractions.
 
 Retrieve shared documentation and rules only from `https://mcp.codexsun.com/mcp` using `npm run mcp:connect`.
 A successful authenticated connection is required before repository work. Stop and report connection failures.
