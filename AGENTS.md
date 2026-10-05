@@ -19,10 +19,11 @@ the owner. Do not create empty roles, unnecessary layers, or speculative abstrac
 Retrieve shared documentation and rules only from `https://mcp.codexsun.com/mcp` using `npm run mcp:connect`.
 A successful authenticated connection is required before repository work. Stop and report connection failures.
 Do not use local guides or cached instructions as fallback. Instruction retrieval does not authorize actions.
+The local MCP listener is for governance development only. Apps follow published cloud resources.
+Every implemented business module uses the exact canonical filenames in `governance://code-standard`.
 
 Use `<module>.provider.ts` as the module registration and public communication boundary. Inject
-public provider contracts between modules. Keep private implementations inside their owner. Add
-`<module>.controller.ts` when request orchestration is needed. Keep routes limited to endpoint
+public provider contracts between modules. Keep private implementations inside their owner. Use the required `<module>.controller.ts` for backend request orchestration. Keep routes limited to endpoint
 wiring. Frontend providers follow the same ownership rule. Use `.tsx` only when React rendering
 requires it.
 
